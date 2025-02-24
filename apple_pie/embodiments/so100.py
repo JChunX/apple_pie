@@ -21,6 +21,8 @@ class SO100Agent(BaseAgent):
 class SO100WristCam(SO100Agent):
     uid = "so100_wristcam"
     ee_link_name = "Wrist_Pitch_Roll"
+    camera_width = 128
+    camera_height = 128
 
     keyframes = dict(
         rest=Keyframe(
@@ -50,13 +52,13 @@ class SO100WristCam(SO100Agent):
             CameraConfig(
                 uid="hand_camera",
                 pose=sapien.Pose(p=p, q=q),
-                width=128,
-                height=128,
+                width=self.camera_width,
+                height=self.camera_height,
                 fov=np.pi / 2,
                 near=0.01,
                 far=100,
                 mount=self.robot.links_map["Fixed_Jaw"],
-                shader_pack="rt-fast",
+                shader_pack="minimal", #rt-fast
             )
         ]
 

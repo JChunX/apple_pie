@@ -9,7 +9,9 @@ setup(
         "mani_skill",
         "streamlit",
         "numpy",
-        "torch"
+        "torch",
+        "hydra-core",
+        "omegaconf"
     ],
     description="A package for robotic manipulation policies",
     author="",
