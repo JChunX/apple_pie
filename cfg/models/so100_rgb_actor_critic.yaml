@@ -1,6 +1,0 @@
-policy:
-  _target_: apple_pie.policies.so100.SO100PPOActor
-  _partial_: True
-value:
-  _target_: apple_pie.policies.so100.SO100PPOCritic
-  _partial_: True
